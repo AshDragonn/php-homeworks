@@ -10,6 +10,9 @@ $type = gettype($variable);
 if (is_bool($variable)) {
 echo "type is $type";
 }
+elseif (is_bool($variable) ) {
+echo "type is $type";
+}
 elseif (is_float($variable) ) {
 echo "type is $type";
 }
