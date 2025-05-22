@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 const OPERATION_EXIT = 0;
 const OPERATION_ADD = 1;
@@ -14,7 +15,7 @@ $operations = [
 
 $items = [];
 
-function getOperationNumber(array $operations, array $items) : int {
+function getOperationNumber(array $operations, array $items) : string {
     $arr = $operations;
     do {
         printCard($items);        
@@ -28,7 +29,7 @@ function getOperationNumber(array $operations, array $items) : int {
         }
         $result = trim(fgets(STDIN));
         if (!array_key_exists($result, $operations)) {
-            system('clear');
+            system('cls');
             echo '!!! Неизвестный номер операции, повторите попытку.' . PHP_EOL;
         }
     } while (!array_key_exists($result, $operations));
@@ -36,7 +37,7 @@ function getOperationNumber(array $operations, array $items) : int {
 }    
 
 function addProduct(array &$items) : void {
-    echo "Введение название товара для добавления в список: \n> ";
+    echo "Введите название товара для добавления в список: \n> ";
     $itemName = trim(fgets(STDIN));
     $items[] = $itemName;
 }
